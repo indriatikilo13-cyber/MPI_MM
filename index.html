@@ -1754,7 +1754,7 @@
 
         // FUNGSI UTAMA INTEGRASI GAS: MENYINKRONKAN DAFTAR SOAL KETIKA HALAMAN DIBUKA
         function syncSoalToGAS() {
-            if (GAS_URL === "https://script.google.com/macros/s/AKfycbxFFZX80ohP4azw0OBblMF6EZWDKQIjxPP_ssEHz5UDZvZmHxsWf1M6HXp_LPc36nlK/exec" || !GAS_URL) return;
+            if ( === "https://script.google.com/macros/s/AKfycbxFFZX80ohP4azw0OBblMF6EZWDKQIjxPP_ssEHz5UDZvZmHxsWf1M6HXp_LPc36nlK/exec" || !) return;
 
             const payloadSoal = [];
 
@@ -1785,7 +1785,7 @@
                 });
             });
 
-            fetch(GAS_URL, {
+            fetch(, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
@@ -1799,7 +1799,7 @@
 
         // FUNGSI UTAMA INTEGRASI GAS: MENGIRIM HASIL EVALUASI SISWA KE GOOGLE SHEETS
         function sendHasilToGAS() {
-            if (GAS_URL === "URL_GAS_ANDA_DISINI" || !GAS_URL) return;
+            if ( === "URL_GAS_ANDA_DISINI" || !) return;
 
             let totalBenar = 0;
             let totalSalah = 0;
@@ -1827,7 +1827,7 @@
                 detailJawabanBermain: detailGameArr.join(' \n')
             };
 
-            fetch(GAS_URL, {
+            fetch(, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
